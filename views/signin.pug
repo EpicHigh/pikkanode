@@ -1,0 +1,23 @@
+extends layout
+block content
+    main.pa4.black-80
+        div!= message
+
+        form.measure.center(method='post')
+            fieldset#sign_up.ba.b--transparent.ph0.mh0
+                legend.f4.fw6.ph0.mh0 Sign In
+                .mt3
+                    label.db.fw6.lh-copy.f6(for='email-address') Email
+                    input#email-address.pa2.input-reset.ba.bg-transparent.hover-bg-black.hover-white.w-100(type='email' name='email-address')
+                .mv3
+                    label.db.fw6.lh-copy.f6(for='password') Password
+                    input#password.b.pa2.input-reset.ba.bg-transparent.hover-bg-black.hover-white.w-100(type='password' name='password')
+                label.pa0.ma0.lh-copy.f6.pointer
+                    input(type='checkbox' name='remember')
+                    |  Remember me
+            div
+                input.b.ph3.pv2.input-reset.ba.b--black.bg-transparent.grow.pointer.f6.dib(type='submit' value='Sign in')
+            .lh-copy.mt3
+                a.f6.link.dim.black(href='/signup') Sign up
+                br
+                a.f6.link.dim.black(href='#0') Forgot your password?

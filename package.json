@@ -1,0 +1,29 @@
+{
+  "name": "pikkanode",
+  "version": "1.0.0",
+  "description": "Pikkanode is a cloning instagram app.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "Koa.js",
+    "Pug(jade)",
+    "tachyons"
+  ],
+  "author": "Prasit Tongpradit",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^2.0.1",
+    "knex": "^0.14.6",
+    "koa": "^2.5.1",
+    "koa-body": "^4.0.3",
+    "koa-bodyparser": "^4.2.1",
+    "koa-pug": "^3.0.0-2",
+    "koa-router": "^7.4.0",
+    "koa-session": "^5.8.1",
+    "koa-static": "^4.0.3",
+    "mysql2": "^1.5.3"
+  }
+}
