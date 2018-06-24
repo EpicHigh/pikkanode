@@ -7,13 +7,13 @@ html
         link(rel='stylesheet' href='https://unpkg.com/tachyons@4.9.1/css/tachyons.min.css')
         link(rel='stylesheet' href='./styles/pikkanode.css')
         link(href='https://fonts.googleapis.com/css?family=Athiti' rel='stylesheet')
+        script(src='./scripts/fblogin.js')
         title Pikka Node
     body
-        nav.flex.justify-between.bb.bg-black-70
-            a.link.white-70.hover-white.no-underline.flex.items-center.pa1.ph3(href='/')
-                img(src='./images/home.svg' alt='home logo' id='logo')
-            .flex-grow.pa1.flex.items-center
-                a.f6.link.dib.white.dim.mr3.mr4-ns(href='#0') About
-                a.f6.link.dib.white.dim.mr3.mr4-ns(href='/signin') Sign In
-                a.f6.dib.white.bg-animate.hover-bg-white.hover-black.no-underline.pv2.ph4.br-pill.ba.b--white-20(href='/signup') Sign Up
+        nav.pa3.pa4-ns.bb.b--white-10
+                a.link.dim.black.b.f3-ns.dib.mr3(href='#' title='Home') Pikkanode
+                a.link.dim.gray.f6.f5-ns.dib.mr3(href='#' title='About') About
+                a.link.dim.gray.f6.f5-ns.dib(href='#' title='Contact') Contact
+                a.f6-ns.dib.black.bg-animate.hover-bg-black.hover-near-white.b--dark-gray.no-underline.pv2-ns.ph4-ns.br-pill.ba.b--black-90.sign.ml3-ns(href='#0') Sign Up
+                a.f6-ns.dib.black.bg-animate.hover-bg-black.hover-near-white.b--dark-gray.no-underline.pv2-ns.ph4-ns.br-pill.ba.b--black-90.sign(href='/signin') Sign In
         block content

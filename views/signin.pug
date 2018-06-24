@@ -1,8 +1,6 @@
 extends layout
 block content
     main.pa4.black-80
-        div!= message
-
         form.measure.center(method='post')
             fieldset#sign_up.ba.b--transparent.ph0.mh0
                 legend.f4.fw6.ph0.mh0 Sign In
@@ -18,6 +16,12 @@ block content
             div
                 input.b.ph3.pv2.input-reset.ba.b--black.bg-transparent.grow.pointer.f6.dib(type='submit' value='Sign in')
             .lh-copy.mt3
-                a.f6.link.dim.black(href='/signup') Sign up
-                br
-                a.f6.link.dim.black(href='#0') Forgot your password?
+                div!= '<div class="fb-login-button" data-width="240" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="true"></div>'
+                div.mt3-ns
+                    a.f6.link.dim.black(href='/signup') Sign up
+                    br
+                    a.f6.link.dim.black(href='#0') Forgot your password?
+                script
+                    include fbresponse.js
+
+
