@@ -1,6 +1,9 @@
 extends layout
 block content
     main.pa4.black-80
+        if (flash && flash.error)
+            div.measure.center.mw6
+                div.alert.alert-danger!= flash.error
         form.measure.center(method='post')
             fieldset#sign_up.ba.b--transparent.ph0.mh0
                 legend.f4.fw6.ph0.mh0 Sign In
@@ -21,7 +24,3 @@ block content
                     a.f6.link.dim.black(href='/signup') Sign up
                     br
                     a.f6.link.dim.black(href='#0') Forgot your password?
-                script
-                    include fbresponse.js
-
-
