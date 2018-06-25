@@ -2,15 +2,13 @@ const Router = require("koa-router");
 const signUpQueries = require("../db/queries/signup_querry");
 
 const router = new Router();
-const BASE_URL = `/signup`;
 
-router.get(BASE_URL, async ctx => {
+router.get("/signup", async ctx => {
   try {
-    ctx.body = {
-      status: "success"
-    };
-  } catch (err) {
-    console.log(err.message);
+	  ctx.render("signup")
+  } catch (e) {
+	  console.log(e.message);
+	  ctx.body = e.message;
   }
 });
 

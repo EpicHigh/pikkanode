@@ -5,6 +5,7 @@ const serve = require("koa-static");
 //routes
 const indexRoutes = require('./routes/indexroute');
 const signinRoutes = require('./routes/signinroute');
+const signupRoutes = require("./routes/signuproute");
 //config
 const app = new Koa();
 const PORT = 1337;
@@ -16,6 +17,7 @@ const pug = new Pug({
 // app.use
 app.use(indexRoutes);
 app.use(signinRoutes);
+app.use(signupRoutes);
 app.use(serve(path.join(__dirname + '/../public')));
 //app.use(createRoutes);
 // listen

@@ -1,15 +1,9 @@
 extends layout
 block content
     main.pa4.black-80
-        //div.background-danger!= checkEmails
-        //div.background-danger!= pwdNotMatch
-        //div.background-danger!= pwdLength
-        div.background-success!= signUpSuccessfully
-        div.background-warning!= signUpFailed
-        div.background-danger!= message
         form.measure.center(method='post')
             fieldset#sign_up.ba.b--transparent.ph0.mh0
-                legend.f4.fw6.ph0.mh0 Sign In
+                legend.f4.fw6.ph0.mh0 Sign Up
                 .mt3
                     label.db.fw6.lh-copy.f6(for='email-address') Email
                     input#email-address.pa2.input-reset.ba.bg-transparent.hover-bg-black.hover-white.w-100(type='email' name='email-address' required)
@@ -21,6 +15,6 @@ block content
                     input#confirm-password.b.pa2.input-reset.ba.bg-transparent.hover-bg-black.hover-white.w-100(type='password' name='confirm-password' required)
             div
                 input.b.ph3.pv2.input-reset.ba.b--black.bg-transparent.grow.pointer.f6.dib(type='submit' value="Sign Up")
-            .mt3
+            .mt3-ns
                 input.b.ph3.pv2.input-reset.ba.b--black.bg-transparent.grow.pointer.f6.dib(type='reset' value='Reset')
 

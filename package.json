@@ -25,9 +25,5 @@
     "koa-session": "^5.8.1",
     "koa-static": "^4.0.3",
     "mysql2": "^1.5.3"
-  },
-  "devDependencies": {
-    "chai": "^4.1.2",
-    "chai-http": "^4.0.0"
   }
 }
