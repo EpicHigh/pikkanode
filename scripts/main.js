@@ -11,6 +11,7 @@ const sessCon = require("./config/session");
 const indexRoutes = require("./routes/index_route");
 const signinRoutes = require("./routes/signin_route");
 const signupRoutes = require("./routes/signup_route");
+const signoutRoutes = require("./routes/signout_route");
 //config
 const app = new Koa();
 const PORT = 1337;
@@ -28,6 +29,7 @@ app.use(message.flash);
 app.use(indexRoutes);
 app.use(signinRoutes);
 app.use(signupRoutes);
+app.use(signoutRoutes);
 app.use(serve(path.join(__dirname + "/../public")));
 //app.use(createRoutes);
 // listen
