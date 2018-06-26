@@ -10,8 +10,7 @@ async function alertMessage(ctx) {
 	};
 	if (data.userId) {
 		return ctx.redirect("/");
-	}
-	else {
+	} else {
 		await ctx.render("signin", data);
 	}
 }
@@ -30,8 +29,11 @@ function checkUserInput(ctx) {
 		ctx.session.loginSuccess = {success: true};
 		ctx.session.userId = {id: 555};
 		return ctx.redirect("/");
+	} else if (inputEmail === user["email-address"]) {
+		ctx.session.flash = {error: "Your password is incorrect. Please try again."};
+		return ctx.redirect("/signin");
 	} else {
-		ctx.session.flash = {error: "Failed"};
+		ctx.session.flash = {error: "Your email address is not signed up. Please <a href='/signup'>sign up</a>."};
 		return ctx.redirect("/signin");
 	}
 }
