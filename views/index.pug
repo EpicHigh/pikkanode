@@ -2,6 +2,8 @@ extends layout
 block content
     if(loginSuccess && loginSuccess.success)
         script(src='./scripts/loginSuccess.js')
+    div.pb4-ns.center.mw6-ns.measure
+        input.input-search(type='text' name='search' placeholder='Search images')
     .container
         .fl.w-50.w-25-ns
             a.db.aspect-ratio.aspect-ratio--1x1.dim(href='https://www.amazon.com/BEYONCÉ-Beyonce/dp/B00KCOMBJC/ref=sr_1_2_twi_lp__3?s=music&ie=UTF8&qid=1480422067&sr=1-2&keywords=beyonce&tag=mrmrs01-20')

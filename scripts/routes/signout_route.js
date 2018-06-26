@@ -2,7 +2,7 @@ const Router = require("koa-router");
 
 const router = new Router();
 
-router.get("/signout", async ctx => {
+router.post("/signout", async ctx => {
 	try {
 		delete ctx.session.userId;
 		return ctx.redirect("/");

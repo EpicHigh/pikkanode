@@ -24,7 +24,6 @@
     "koa-router": "^7.4.0",
     "koa-session": "^5.8.1",
     "koa-static": "^4.0.3",
-    "lodash": "^4.17.10",
     "mysql2": "^1.5.3"
   }
 }
