@@ -30,10 +30,22 @@ function checkUserInput(ctx) {
 		ctx.session.userId = {id: 555};
 		return ctx.redirect("/");
 	} else if (inputEmail === user["email-address"]) {
-		ctx.session.flash = {error: "Your password is incorrect. Please try again."};
+		ctx.session.flash = {
+			error: "Your password is incorrect. Please try again."
+		};
 		return ctx.redirect("/signin");
+	} else if (
+		String(inputEmail).includes(" ") ||
+		String(inputPass).includes(" ")
+	) {
+		ctx.session.flash = {
+			error: "Email address or password cannot be spaces."
+		};
 	} else {
-		ctx.session.flash = {error: "Your email address is not signed up. Please <a href='/signup'>sign up</a>."};
+		ctx.session.flash = {
+			error:
+				"Your email address does not signed up. Please <a href='/signup'>sign up</a>."
+		};
 		return ctx.redirect("/signin");
 	}
 }
