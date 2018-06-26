@@ -41,6 +41,7 @@ function checkUserInput(ctx) {
 		ctx.session.flash = {
 			error: "Email address or password cannot be spaces."
 		};
+		return ctx.redirect("/");
 	} else {
 		ctx.session.flash = {
 			error:
