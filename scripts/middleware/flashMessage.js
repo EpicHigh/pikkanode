@@ -6,6 +6,7 @@ module.exports.flash = async (ctx, next) => {
 	console.log(ctx.session);
 	ctx.flash = ctx.session.flash;
 	ctx.loginSuccess = ctx.session.loginSuccess;
+	ctx.userId = ctx.session.userId;
 	delete ctx.session.flash;
 	delete ctx.session.loginSuccess;
 	await next();

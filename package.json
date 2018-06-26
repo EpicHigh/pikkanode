@@ -19,11 +19,12 @@
     "knex": "^0.14.6",
     "koa": "^2.5.1",
     "koa-body": "^4.0.3",
+    "koa-passport": "^4.1.0",
     "koa-pug": "^3.0.0-2",
     "koa-router": "^7.4.0",
     "koa-session": "^5.8.1",
     "koa-static": "^4.0.3",
-    "mysql2": "^1.5.3",
-    "sweetalert2": "^7.24.1"
+    "lodash": "^4.17.10",
+    "mysql2": "^1.5.3"
   }
 }

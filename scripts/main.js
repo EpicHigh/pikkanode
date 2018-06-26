@@ -21,6 +21,7 @@ const pug = new Pug({
 });
 app.keys = ["Secret-Services"];
 // app.use
+
 app.use(koaBody());
 app.use(session(sessCon.sessionConfig, app));
 app.use(message.flash);
@@ -31,3 +32,4 @@ app.use(serve(path.join(__dirname + "/../public")));
 //app.use(createRoutes);
 // listen
 app.listen(PORT);
+console.log(`PIKKANODE is listening on port ${PORT}`);

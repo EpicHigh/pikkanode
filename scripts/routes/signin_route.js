@@ -15,12 +15,11 @@ const user = {
 };
 
 function checkUserInput(ctx) {
-	if (
-		(ctx.request.body["email-address"] =
-			user["email-address"] &&
-			ctx.request.body["password"] === user["password"])
-	) {
+	const inputEmail = ctx.request.body["email-address"];
+	const inputPass = ctx.request.body["password"];
+	if ((inputEmail === user["email-address"] && inputPass === user["password"])) {
 		ctx.session.loginSuccess = {success: true};
+		ctx.session.userId = {id: 555};
 		return ctx.redirect("/");
 	} else {
 		ctx.session.flash = {error: "Failed"};
