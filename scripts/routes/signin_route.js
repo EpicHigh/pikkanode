@@ -9,26 +9,24 @@ async function alertMessage(ctx) {
 	await ctx.render("signin", data);
 }
 
+const user = {
+	"email-address": "epic@high.com",
+	password: "034812703"
+};
+
 function checkUserInput(ctx) {
 	if (
 		(ctx.request.body["email-address"] =
 			user["email-address"] &&
 			ctx.request.body["password"] === user["password"])
 	) {
-		console.log("Sign in successfully");
-		ctx.session.flash = {error: "Sign in successfully."};
-		return ctx.redirect("back", "/signin");
+		ctx.session.loginSuccess = {success: true};
+		return ctx.redirect("/");
 	} else {
-		console.log("Failed");
 		ctx.session.flash = {error: "Failed"};
-		return ctx.redirect("back", "/signin");
+		return ctx.redirect("/signin");
 	}
 }
-
-const user = {
-	"email-address": "epic@high.com",
-	password: "034812703"
-};
 
 router.get("/signin", alertMessage);
 router.post("/signin", checkUserInput);

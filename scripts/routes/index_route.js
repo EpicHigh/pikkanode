@@ -4,7 +4,10 @@ const router = new Router();
 
 router.get("/", async ctx => {
   try {
-    ctx.render('index');
+	  const data = {
+		  loginSuccess: ctx.loginSuccess
+	  };
+	  ctx.render("index", data);
   } catch (e) {
     console.log(e.message);
     ctx.body = e.message;

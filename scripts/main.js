@@ -5,7 +5,7 @@ const path = require("path");
 const session = require("koa-session");
 const serve = require("koa-static");
 //Applied to middleware
-const use = require("./middleware/flash");
+const message = require("./middleware/flashMessage");
 const sessCon = require("./config/session");
 //routes
 const indexRoutes = require("./routes/index_route");
@@ -23,7 +23,7 @@ app.keys = ["Secret-Services"];
 // app.use
 app.use(koaBody());
 app.use(session(sessCon.sessionConfig, app));
-app.use(use.flash);
+app.use(message.flash);
 app.use(indexRoutes);
 app.use(signinRoutes);
 app.use(signupRoutes);

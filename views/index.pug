@@ -1,5 +1,7 @@
 extends layout
 block content
+    if (loginSuccess && loginSuccess.success)
+        script(src='./scripts/loginSuccess.js')
     .container
         .fl.w-50.w-25-ns
             a.db.aspect-ratio.aspect-ratio--1x1.dim(href='https://www.amazon.com/BEYONCÉ-Beyonce/dp/B00KCOMBJC/ref=sr_1_2_twi_lp__3?s=music&ie=UTF8&qid=1480422067&sr=1-2&keywords=beyonce&tag=mrmrs01-20')
@@ -53,4 +55,3 @@ block content
         .fl.w-100.w-50-l
             a.db.aspect-ratio.aspect-ratio--1x1.dim(href='https://www.amazon.com/Malibu-Anderson-Paak/dp/B01BXNXBAS/ref=sr_1_1_twi_lp__3?s=music&ie=UTF8&qid=1480422041&sr=1-1&keywords=paak&tag=mrmrs01-20')
                 span.bg-center.cover.aspect-ratio--object(role='img' aria-label='Malibu -  Anderson Paak' style='background-image:url(http://mrmrs.github.io/photos/paak.jpg);')
-
