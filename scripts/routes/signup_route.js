@@ -1,43 +1,7 @@
 const Router = require("koa-router");
-const signUpQueries = require("../db/queries/signup_querry");
+const signup = require("../controller/signupCheckUserInput");
 
 const router = new Router();
-
-async function checkUserInput(ctx) {
-	const inputEmail = ctx.request.body["email-address"];
-	const inputPass = ctx.request.body["password"];
-	const inputConfirmPass = ctx.request.body["confirm-password"];
-	if (inputPass !== inputConfirmPass) {
-		ctx.session.flash = {
-			error:
-				"Your password and confirm password do not match, Pleases try again."
-		};
-		return ctx.redirect("/signup");
-	} else if (
-		String(inputEmail).includes(" ") ||
-		String(inputPass).includes(" ") ||
-		String(inputConfirmPass).includes(" ")
-	) {
-		ctx.session.flash = {
-			error: "Email address, password or comfirm password cannot be spaces."
-		};
-		return ctx.redirect("/signup");
-	} else if (String(inputPass).length < 6) {
-		ctx.session.flash = {
-			error: "Your password length must be at least 6 characters"
-		};
-		return ctx.redirect("/signup");
-	} else if (await signUpQueries.checkEmail(inputEmail)) {
-		ctx.session.flash = {
-			error: "This email has already been registered."
-		};
-		return ctx.redirect("/signup");
-	} else {
-		signUpQueries.registerUser(inputEmail, inputPass);
-		ctx.session.registerSuccess = {success: true};
-		return ctx.redirect("/");
-	}
-}
 
 router.get("/signup", async ctx => {
 	const data = {
@@ -56,6 +20,6 @@ router.get("/signup", async ctx => {
   }
 });
 //console.log(Boolean(signUpQueries.checkEmail("pikachu@mouse.pokemon")));
-router.post("/signup", checkUserInput);
+router.post("/signup", signup.checkUserInput);
 
 module.exports = router.routes();
