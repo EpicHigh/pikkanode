@@ -1,9 +1,9 @@
 const signUpQueries = require("../db/queries/signup_querry");
 
 async function checkUserInput(ctx) {
-	const inputEmail = ctx.request.body["email-address"];
-	const inputPass = ctx.request.body["password"];
-	const inputConfirmPass = ctx.request.body["confirm-password"];
+	const inputEmail = ctx.request.body["email-address"],
+		inputPass = ctx.request.body["password"],
+		inputConfirmPass = ctx.request.body["confirm-password"];
 	if (inputPass !== inputConfirmPass) {
 		ctx.session.flash = {
 			error:

@@ -3,7 +3,7 @@ module.exports.flash = async (ctx, next) => {
 	if (!ctx.session) {
 		throw new Error("flash message required session");
 	}
-	console.log(ctx.session);
+	//console.log(ctx.session);
 	ctx.flash = ctx.session.flash;
 	ctx.loginSuccess = ctx.session.loginSuccess;
 	ctx.userId = ctx.session.userId;

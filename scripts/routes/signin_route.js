@@ -1,5 +1,5 @@
-const Router = require("koa-router");
-const signin = require("../controller/signinCheckUserInput");
+const Router = require("koa-router"),
+	signin = require("../controller/signinCheckUserInput");
 
 const router = new Router();
 

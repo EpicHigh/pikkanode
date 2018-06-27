@@ -1,8 +1,8 @@
 const signInQueries = require("../db/queries/signin_querry");
 
 async function checkUserInput(ctx) {
-	const inputEmail = ctx.request.body["email-address"];
-	const inputPass = ctx.request.body["password"];
+	const inputEmail = ctx.request.body["email-address"],
+		inputPass = ctx.request.body["password"];
 	console.log(inputEmail);
 	console.log(inputPass);
 	if (

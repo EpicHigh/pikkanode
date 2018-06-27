@@ -1,5 +1,5 @@
-const knex = require("../connection");
-const uuidv4 = require("uuid/v4");
+const knex = require("../connection"),
+	uuidv4 = require("uuid/v4");
 //Add a picture to database
 function addPikka(caption, user_id) {
 	knex("pictures")

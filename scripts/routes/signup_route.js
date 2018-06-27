@@ -1,7 +1,6 @@
-const Router = require("koa-router");
-const signup = require("../controller/signupCheckUserInput");
-
-const router = new Router();
+const Router = require("koa-router"),
+	signup = require("../controller/signupCheckUserInput"),
+	router = new Router();
 
 router.get("/signup", async ctx => {
 	const data = {

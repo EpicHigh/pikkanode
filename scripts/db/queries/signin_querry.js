@@ -1,5 +1,5 @@
-const knex = require("../connection");
-const bcrypt = require("bcrypt");
+const knex = require("../connection"),
+	bcrypt = require("bcrypt");
 
 //Return user ID and save it to ctx.session.userId
 async function userID(email) {
@@ -20,5 +20,7 @@ async function checkEmail(email) {
 }
 
 module.exports = {
-	userID, checkEmail, comparePassword
+	userID,
+	checkEmail,
+	comparePassword
 };

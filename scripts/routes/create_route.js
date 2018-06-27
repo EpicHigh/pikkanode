@@ -19,7 +19,11 @@ router.get("/create", async ctx => {
 });
 
 router.post("/create", async ctx => {
-	ctx.redirect("/create")
+	//ctx.redirect("/create");
+	console.log(ctx.request.files);
+	console.log(ctx.request.body["caption"]);
+	//console.log(ctx.request.body["photo"]);
+	//ctx.body = JSON.stringify(ctx.request.body);
 });
 
 module.exports = router.routes();

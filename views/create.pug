@@ -4,16 +4,16 @@ block content
         center
             p.f4.lh-copy Pikka Node loves pictures, Let's Pikka
                 span.text-success  Load!
-            form(method='POST' enctype='multipart/form-data')
+            form(method='post' enctype='multipart/form-data')
                 input.input-search(name='caption' placeholder='Add some captions')
-            .pt2-ns
-                .wrapper
-                    .file-upload
-                        p Choose a file
-                        input(name='photo' type='file' accept='image/jpeg, image/png')
-            .pt2-ns
+                .pt2-ns
+                    .wrapper
+                        .file-upload
+                            p Choose a file
+                            input(name='photo' type='file' accept='image/jpeg, image/png')
+                .pt2-ns
+                    button.submit(type='submit' value="Submit")
+                        i.fas.fa-upload.fa-2x
+            //.pt2-ns
                 img#output
-            .pt2-ns
-                button.submit(type='submit')
-                    i.fas.fa-upload.fa-2x
-    script(src='./scripts/createPath.js')
+    //script(src='./scripts/createPath.js')
