@@ -2,33 +2,27 @@ const knex = require("../connection");
 const uuidv4 = require("uuid/v4");
 //Add a picture to database
 function addPikka(caption, user_id) {
-  return knex("pictures")
+	knex("pictures")
     .insert({
-      id: uuidv4(),
+	    id: createID(),
       caption: caption,
       created_by: user_id
     })
     .returning("*")
-    .then(res => console.log(`insert successfully: ${res}`))
+	.then(res => console.log(`Create successfully: ${res}`))
     .catch(err => console.error(err.message));
 }
 //Show any pictures where user_id
 function showPikka(user_id) {
-  return knex
-    .select("*")
-    .table("pictures")
-    .whereRaw("created_by = ?", user_id)
-    .then(res => console.log(`select successfully: ${res}`))
-    .catch(err => console.error(err.message));
+
 }
 
 function createID() {
 	const id = uuidv4();
-	return String(id).slice(0, String(id).indexOf("-"))
+	return String(id).slice(0, String(id).indexOf("-"));
 }
 
-console.log(createID());
+
 module.exports = {
-	addPikka,
-	showPikka
+	addPikka
 };

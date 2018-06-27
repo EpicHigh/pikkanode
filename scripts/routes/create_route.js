@@ -3,19 +3,23 @@ const createQueries = require('../db/queries/create_querry');
 const router = new Router();
 
 router.get("/create", async ctx => {
-	const data = {
-		userId: ctx.userId
-	};
+	//const data = {
+	//	userId: ctx.userId
+	//};
 	try {
-		if (!data.userId) {
-			return ctx.redirect("/signin");
-		} else {
+		//	if (!data.userId) {
+		//		return ctx.redirect("/signin");
+		//	} else {
 			await ctx.render("create");
-		}
+		//	}
 	} catch (e) {
 		console.log(e.message);
 		ctx.body = e.message;
 	}
+});
+
+router.post("/create", async ctx => {
+	ctx.redirect("/create")
 });
 
 module.exports = router.routes();

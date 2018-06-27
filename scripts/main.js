@@ -13,6 +13,7 @@ const indexRoutes = require("./routes/index_route");
 const signinRoutes = require("./routes/signin_route");
 const signupRoutes = require("./routes/signup_route");
 const signoutRoutes = require("./routes/signout_route");
+const createRoutes = require("./routes/create_route");
 //config
 const app = new Koa();
 const router = new Router();
@@ -32,6 +33,7 @@ app.use(indexRoutes);
 app.use(signinRoutes);
 app.use(signupRoutes);
 app.use(signoutRoutes);
+app.use(createRoutes);
 app.use(serve(path.join(__dirname + "/../public")));
 //app.use(createRoutes);
 app.use(router.allowedMethods());

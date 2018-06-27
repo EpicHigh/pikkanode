@@ -18,7 +18,7 @@ async function registerUser(email, pwd) {
 	    password: await hashing(pwd)
     })
     .returning("*")
-  .then(res => console.log(`insert successfully, where ID = ${res}`))
+  .then(res => console.log(`Register successfully, where ID = ${res}`))
     .catch(e => console.error(e.message));
 }
 

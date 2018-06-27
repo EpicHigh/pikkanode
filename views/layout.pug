@@ -3,10 +3,10 @@ html
         meta(charset='UTF-8')
         meta(name='viewport' content='width=device-width, initial-scale=1.0')
         meta(http-equiv='X-UA-Compatible' content='ie=edge')
-        link(rel='stylesheet' href='https://unpkg.com/papercss@1.4.1/dist/paper.css')
         link(rel='stylesheet' href='https://unpkg.com/tachyons@4.9.1/css/tachyons.min.css')
+        link(rel='stylesheet' href='https://unpkg.com/papercss@1.4.1/dist/paper.css')
         link(rel='stylesheet' href='./styles/main.css')
-        link(href='https://fonts.googleapis.com/css?family=Athiti' rel='stylesheet')
+        link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.1.0/css/all.css')
         script(src='https://cdn.jsdelivr.net/npm/sweetalert2')
         title Pikka Node
         body
@@ -15,14 +15,15 @@ html
                     a.link.dim.black.b.f3-ns.ttu.ns-ns.dib.mr3(href='/' title='Home') Pikkanode
                     a.link.dim.gray.f6.f5-ns.dib.mr3(href='#' title='About') About
                     a.link.dim.gray.f6.f5-ns.dib.mr3(href='#' title='Contact') Contact
-                    a.link.dim.gray.f6.f5-ns.dib.mr3(href='#' title='Create') Create
+                    a.link.dim.gray.f6.f5-ns.dib.mr3(href='/create' title='Create') Create
                     form(method='post' action='/signout')
                         button.f6-ns.dib.black.bg-animate.hover-bg-black.hover-near-white.b--dark-gray.no-underline.pv2-ns.ph4-ns.br-pill.ba.b--black-90.sign-out.ml3-ns Signout
             else
                 nav.pa3.pa4-ns.bb.b--white-10
                     a.link.dim.black.b.f3-ns.ttu.ns-ns.dib.mr3(href='/' title='Home') Pikkanode
                     a.link.dim.gray.f6.f5-ns.dib.mr3(href='#' title='About') About
-                    a.link.dim.gray.f6.f5-ns.dib(href='#' title='Contact') Contact
+                    a.link.dim.gray.f6.f5-ns.dib.mr3(href='#' title='Contact') Contact
+                    a.link.dim.gray.f6.f5-ns.dib.mr3(href='/create' title='Create') Create
                     a.f6-ns.dib.black.bg-animate.hover-bg-black.hover-near-white.b--dark-gray.no-underline.pv2-ns.ph4-ns.br-pill.ba.b--black-90.sign.ml3-ns(href='/signup') Sign Up
                     a.f6-ns.dib.black.bg-animate.hover-bg-black.hover-near-white.b--dark-gray.no-underline.pv2-ns.ph4-ns.br-pill.ba.b--black-90.sign(href='/signin') Sign In
             block content
