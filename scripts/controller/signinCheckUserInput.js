@@ -1,19 +1,18 @@
-//Mock a user
-const user = {
-	"email-address": "epic@high.com",
-	password: "034812703"
-};
+const signInQueries = require("../db/queries/signin_querry");
 
-function checkUserInput(ctx) {
+async function checkUserInput(ctx) {
 	const inputEmail = ctx.request.body["email-address"];
 	const inputPass = ctx.request.body["password"];
 	console.log(inputEmail);
 	console.log(inputPass);
-	if (inputEmail === user["email-address"] && inputPass === user["password"]) {
+	if (
+		(await signInQueries.checkEmail(inputEmail)) &&
+		(await signInQueries.comparePassword(inputEmail, inputPass))
+	) {
 		ctx.session.loginSuccess = {success: true};
-		ctx.session.userId = {id: 555};
+		ctx.session.userId = {id: await signInQueries.userID(inputEmail)};
 		return ctx.redirect("/");
-	} else if (inputEmail === user["email-address"]) {
+	} else if (await signInQueries.checkEmail(inputEmail)) {
 		ctx.session.flash = {
 			error: "Your password is incorrect. Please try again."
 		};

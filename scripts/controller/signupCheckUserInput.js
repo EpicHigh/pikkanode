@@ -30,7 +30,7 @@ async function checkUserInput(ctx) {
 		};
 		return ctx.redirect("/signup");
 	} else {
-		signUpQueries.registerUser(inputEmail, inputPass);
+		await signUpQueries.registerUser(inputEmail, inputPass);
 		ctx.session.registerSuccess = {success: true};
 		return ctx.redirect("/");
 	}

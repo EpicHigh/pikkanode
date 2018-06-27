@@ -30,3 +30,8 @@ a:visited {
     margin-right: auto;
     margin-left: auto;
 }
+
+.sign-out {
+    margin-top: -2rem;
+    float: right;
+}

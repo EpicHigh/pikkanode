@@ -7,7 +7,7 @@ async function hashing(pwd) {
 
 async function checkEmail(email) {
 	const hasEmail = await knex("users").whereRaw("email = ?", email);
-	return !!hasEmail[0]
+	return !!hasEmail[0];
 	//console.log(hasEmail[0]);
 }
 
@@ -22,8 +22,7 @@ async function registerUser(email, pwd) {
     .catch(e => console.error(e.message));
 }
 
-//registerUser("pikachu@mouse.pokemon","034812703");
-//checkEmail("raichu@mouse.pokemon");
 module.exports = {
-	registerUser, checkEmail
+	registerUser,
+	checkEmail
 };

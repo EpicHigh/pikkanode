@@ -22,6 +22,12 @@ function showPikka(user_id) {
     .catch(err => console.error(err.message));
 }
 
+function createID() {
+	const id = uuidv4();
+	return String(id).slice(0, String(id).indexOf("-"))
+}
+
+console.log(createID());
 module.exports = {
 	addPikka,
 	showPikka
