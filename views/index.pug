@@ -2,6 +2,8 @@ extends layout
 block content
     if(loginSuccess && loginSuccess.success)
         script(src='./scripts/loginSuccess.js')
+    if(registerSuccess && registerSuccess.success)
+        script(src='./scripts/registerSuccess.js')
     div.pb4-ns.center.mw6-ns.measure
         input.input-search(type='text' name='search' placeholder='Search images')
     .container

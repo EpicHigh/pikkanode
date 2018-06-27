@@ -5,10 +5,11 @@ const router = new Router();
 router.get("/", async ctx => {
 	const data = {
 		loginSuccess: ctx.loginSuccess,
+		registerSuccess: ctx.registerSuccess,
 		userId: ctx.userId
 	};
 	try {
-		ctx.render("index", data);
+		await ctx.render("index", data);
   } catch (e) {
     console.log(e.message);
     ctx.body = e.message;

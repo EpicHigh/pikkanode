@@ -23,5 +23,6 @@ function showPikka(user_id) {
 }
 
 module.exports = {
-  addPikka,showPikka
+	addPikka,
+	showPikka
 };

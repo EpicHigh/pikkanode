@@ -5,19 +5,25 @@ async function hashing(pwd) {
   return await bcrypt.hash(pwd, 10);
 }
 
-function registerUser(email, pwd) {
+async function checkEmail(email) {
+	const hasEmail = await knex("users").whereRaw("email = ?", email);
+	return !!hasEmail[0]
+	//console.log(hasEmail[0]);
+}
+
+async function registerUser(email, pwd) {
   knex("users")
     .insert({
       email: email,
-      password: hashing(pwd)
-        .then(res => res)
-        .catch(e => console.error(e.message))
+	    password: await hashing(pwd)
     })
     .returning("*")
-    .then(res => console.log(`insert successfully: ${res}`))
+  .then(res => console.log(`insert successfully, where ID = ${res}`))
     .catch(e => console.error(e.message));
 }
 
+//registerUser("pikachu@mouse.pokemon","034812703");
+//checkEmail("raichu@mouse.pokemon");
 module.exports = {
-  registerUser
+	registerUser, checkEmail
 };

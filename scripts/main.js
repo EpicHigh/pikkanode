@@ -1,5 +1,6 @@
 const Koa = require("koa");
 const koaBody = require("koa-body");
+const Router = require("koa-router");
 const Pug = require("koa-pug");
 const path = require("path");
 const session = require("koa-session");
@@ -14,6 +15,7 @@ const signupRoutes = require("./routes/signup_route");
 const signoutRoutes = require("./routes/signout_route");
 //config
 const app = new Koa();
+const router = new Router();
 const PORT = 1337;
 const pug = new Pug({
 	viewPath: "views",
@@ -32,6 +34,7 @@ app.use(signupRoutes);
 app.use(signoutRoutes);
 app.use(serve(path.join(__dirname + "/../public")));
 //app.use(createRoutes);
+app.use(router.allowedMethods());
 // listen
 app.listen(PORT);
 console.log(`PIKKANODE is listening on port ${PORT}`);
