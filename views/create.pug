@@ -2,6 +2,8 @@ extends layout
 block content
     .measure.center.paper
         center
+            if (flash && flash.error)
+                div.alert.alert-danger!= flash.error
             p.f4.lh-copy Pikka Node loves pictures, Let's Pikka
                 span.text-success  Load!
             form(method='post' enctype='multipart/form-data')
@@ -14,6 +16,8 @@ block content
                 .pt2-ns
                     button.submit(type='submit' value="Submit")
                         i.fas.fa-upload.fa-2x
-            //.pt2-ns
+            .pt2-ns
                 img#output
-    //script(src='./scripts/createPath.js')
+    script(src='./scripts/createPath.js')
+    if(upload && upload.success)
+        script(src='./scripts/uploadSuccess.js')
