@@ -1,0 +1,45 @@
+extends layout
+block content
+    .container-pikka
+        .title.block-image.w-100-ns.w-50-m.w-30-l.pikka-caption
+            h2.post-title
+                | THE
+                br
+                |  DARK SIDE
+                br
+                |  OF THE DIGITAL NOMAD
+            .tc
+                form(method='post')
+                    button.tag(name='Like') Like
+            .t-footer
+        .comments.block-comment.w-100-ns.w-40-m.w-25-l
+            .top
+                p
+                    | COMMENTS (48)
+            .comment-box
+                img(src='http://academicos.uchilefau.cl/wp-content/uploads/2012/08/female2001.png')
+                p.name
+                    | @itska
+                    span.span.hour &bull; 1 hours ago
+                p.c-txt Lorem ipsum dolor sit amet, consectetur elit.
+                .comment-box
+                    img(src='http://academicos.uchilefau.cl/wp-content/uploads/2012/08/female2001.png')
+                    p.name
+                        | @itska
+                        span.span.hour &bull; 1 hours ago
+                    p.c-txt Lorem ipsum dolor sit amet, consectetur elit.
+                    .comment-box
+                        img(src='http://academicos.uchilefau.cl/wp-content/uploads/2012/08/female2001.png')
+                        p.name
+                            | @itska
+                            span.span.hour &bull; 1 hours ago
+                        p.c-txt Lorem ipsum dolor sit amet, consectetur elit.
+                        .comment-box
+                            img(src='http://academicos.uchilefau.cl/wp-content/uploads/2012/08/female2001.png')
+                            p.name
+                                | @itska
+                                span.hour &bull; 1 hours ago
+                            p.c-txt Lorem ipsum dolor sit amet, consectetur elit.
+    .center.mw7.pt3.measure
+        form(method='post')
+            input.input-search(type='text' name='comment' placeholder='Comment')

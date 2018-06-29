@@ -14,6 +14,7 @@ const Koa = require("koa"),
 	signupRoutes = require("./routes/signup_route"),
 	signoutRoutes = require("./routes/signout_route"),
 	createRoutes = require("./routes/create_route"),
+	pikkaRoutes = require("./routes/pikka_route"),
 	//config
 	app = new Koa(),
 	router = new Router(),
@@ -34,6 +35,7 @@ app.use(signinRoutes);
 app.use(signupRoutes);
 app.use(signoutRoutes);
 app.use(createRoutes);
+app.use(pikkaRoutes);
 app.use(serve(path.join(__dirname + "/../public")));
 //app.use(createRoutes);
 app.use(router.allowedMethods());

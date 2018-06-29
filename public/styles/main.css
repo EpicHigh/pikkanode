@@ -92,7 +92,6 @@ a:visited {
 #caption .text h4 {
     margin: 0;
     text-transform: uppercase;
-    /*font-family: 'Raleway', sans-serif;*/
     color: white;
 }
 
@@ -103,4 +102,123 @@ a:visited {
 
 #caption:hover img {
     -webkit-filter: grayscale(100%);
+}
+
+.pikka-caption {
+    transition: all 1s ease;
+}
+
+.pikka-caption:hover {
+    -webkit-filter: grayscale(100%);
+}
+
+.container-pikka {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.block-image {
+    height: 25rem;
+    margin-left: auto;
+}
+
+.block-comment {
+    height: 25rem;
+    margin-right: auto;
+    overflow: auto;
+}
+
+/* title block */
+.title {
+    background-image: url('https://static.pexels.com/photos/110238/pexels-photo-110238-large.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+
+.post-title {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: center;
+}
+
+.tag {
+    padding: 0.7rem;
+    background: #fff;
+    border: none;
+    font-size: 0.9rem;
+}
+
+.black-pikka {
+    color: #000;
+    margin-left: 70px;
+}
+
+.span {
+    color: #BFC1C3;
+}
+
+.t-footer img {
+    width: 15px;
+    float: right;
+}
+
+/* text block */
+.text-pikka {
+    background-color: #F8F9FA;
+}
+
+.text-pikka .black {
+    margin: 0;
+}
+
+.txt {
+    margin: 0 20px;
+    line-height: 1.5;
+    margin-top: 35px;
+    text-align: justify;
+}
+
+.txt:first-letter {
+    font-size: 90px;
+    float: left;
+    margin: -24px 20px -20px 0;
+}
+
+/* comments block */
+
+.comments {
+    background-color: #fff;
+}
+
+.top p {
+    font-weight: bold;
+    font-size: 13px;
+    margin-top: 20px;
+    margin-left: 90px;
+}
+
+.comment-box img {
+    width: 57px;
+    float: left;
+    margin: 0 20px;
+    margin-top: 5px;
+    border-radius: 50%;
+}
+
+.name {
+    padding-top: 15px;
+    font-weight: bold;
+}
+
+.hour {
+    font-size: 11px;
+    margin-left: 3px;
+}
+
+.c-txt {
+    margin-left: 100px;
+    margin-right: 20px;
+    text-align: justify;
 }
