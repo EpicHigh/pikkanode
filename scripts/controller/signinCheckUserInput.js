@@ -11,6 +11,7 @@ async function checkUserInput(ctx) {
 	) {
 		ctx.session.loginSuccess = {success: true};
 		ctx.session.userId = {id: await signInQueries.userID(inputEmail)};
+		ctx.session.username = String(inputEmail).slice(0, String(inputEmail).indexOf("@"));
 		return ctx.redirect("/");
 	} else if (await signInQueries.checkEmail(inputEmail)) {
 		ctx.session.flash = {

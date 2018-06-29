@@ -1,0 +1,215 @@
+body {
+    background-color: #f9fafb;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23c5c5c5' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+#logo {
+    width: 1.5rem;
+    height: auto;
+}
+
+a:visited {
+    color: #41403e;
+}
+
+.sign {
+    margin-top: -0.5rem;
+    float: right;
+}
+
+.input-search {
+    width: 12rem;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.input-search:focus {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.sign-out {
+    margin-top: -2rem;
+    float: right;
+}
+
+.wrapper {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.file-upload {
+    height: 7.5rem;
+    width: 7.5rem;
+    border-radius: 100px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid #ffffff;
+    overflow: hidden;
+    background-image: linear-gradient(to bottom, #2590eb 50%, #ffffff 50%);
+    background-size: 100% 200%;
+    transition: all 1s;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.file-upload input[type="file"] {
+    height: 10rem;
+    width: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.file-upload:hover {
+    background-position: 0 -100%;
+    color: #2590eb;
+}
+
+#caption {
+    position: relative;
+}
+
+#caption .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    opacity: 0;
+    transition: all 0.8s ease;
+}
+
+#caption .text h4 {
+    margin: 0;
+    text-transform: uppercase;
+    color: white;
+}
+
+#caption:hover .text {
+    opacity: 1;
+}
+
+#caption:hover img {
+    -webkit-filter: grayscale(100%);
+}
+
+/*For Pikka*/
+
+.pikka-caption {
+    transition: all 1s ease;
+}
+
+.pikka-caption:hover {
+    -webkit-filter: grayscale(100%);
+}
+
+.container-pikka {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.block-image {
+    height: 25rem;
+    margin-left: auto;
+}
+
+.block-comment {
+    height: 25rem;
+    margin-right: auto;
+    overflow: auto;
+}
+
+/* title block */
+.title {
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #000000;
+}
+
+.post-title {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: center;
+}
+
+.tag {
+    padding: 0.7rem;
+    background: #fff;
+    border: none;
+    font-size: 0.9rem;
+}
+
+.black-pikka {
+    color: #000;
+    margin-left: 70px;
+}
+
+.span {
+    color: #bfc1c3;
+}
+
+/* text block */
+.text-pikka {
+    background-color: #f8f9fa;
+}
+
+.txt {
+    margin: 0 20px;
+    line-height: 1.5;
+    margin-top: 35px;
+    text-align: justify;
+}
+
+.txt:first-letter {
+    font-size: 90px;
+    float: left;
+    margin: -24px 20px -20px 0;
+}
+
+/* comments block */
+
+.comments {
+    background-color: #fff;
+}
+
+.top p {
+    font-weight: bold;
+    font-size: 13px;
+    margin-top: 20px;
+    margin-left: 90px;
+}
+
+.comment-box img {
+    width: 57px;
+    float: left;
+    margin: 0 20px;
+    margin-top: 5px;
+    border-radius: 50%;
+}
+
+.name {
+    padding-top: 15px;
+    font-weight: bold;
+}
+
+.hour {
+    font-size: 11px;
+    margin-left: 3px;
+}
+
+.c-txt {
+    margin-left: 100px;
+    margin-right: 20px;
+    text-align: justify;
+}

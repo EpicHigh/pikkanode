@@ -27,9 +27,6 @@ async function uploadHandler(ctx) {
 			fileTypeSliced = fileTypeSlicing(fileType),
 			caption = ctx.request.body["caption"],
 			filePath = ctx.request.files.photo.path;
-		console.log(ctx.request.files.photo.name);
-		console.log(fileType);
-		console.log(caption);
 		if (!allowFileType[fileType]) {
 			ctx.session.flash = {
 				error: "Sorry, This file type is not allowed yet"
@@ -38,19 +35,17 @@ async function uploadHandler(ctx) {
 			console.log("Sorry, This file type is not allowed yet");
 			return ctx.redirect("/create");
 		} else {
-			createQueries.addPikka(
-				id,
-				fileTypeSliced,
-				caption,
-				ctx.session.userId.id
-			);
-			await fsx.rename(
-				filePath,
-				path.join(
-					__dirname + "/../../public//upload",
-					`${id}.${fileTypeSliced}`
-				)
-			);
+			fsx.rename(filePath, path.join(__dirname + "/../../public/pikka/upload", `${id}.${fileTypeSliced}`))
+			.then(res => {
+				console.log(`Upload Susccessfully: ${res}`);
+				createQueries.addPikka(
+					id,
+					fileTypeSliced,
+					caption,
+					ctx.session.userId.id
+				);
+			})
+			.catch(err => console.error(err));
 			ctx.session.uploadSuccess = {success: true};
 			return ctx.redirect("/create");
 		}

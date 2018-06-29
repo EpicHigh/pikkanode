@@ -24,6 +24,7 @@ const Koa = require("koa"),
 		basedir: "views",
 		app: app // equals to pug.use(app) and app.use(pug.middleware)
 	});
+
 app.keys = ["Secret-Services"];
 // app.use
 
