@@ -63,4 +63,4 @@ typings/
 .next
 
 .idea/workspace.xml
-/public/pikka/upload/
+/package-lock.json
