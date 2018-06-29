@@ -3,8 +3,8 @@ const createQueries = require("../db/queries/index_querry"),
 	captionDiv = `<div id="caption">`,
 	captionSpan = `<span class="text">`,
 	detail = `<div class="mt2 f6">`,
-	like = `<p class="ml0 black truncate w-100 tc">Like: 0</p>`,
-	comment = `<p class="ml0 black truncate w-100 tc">Comment: 0</p>`,
+	like = `<p class="ml0 black w-100 tc avenir">Like: 0</p>`,
+	comment = `<p class="ml0 black w-100 tc avenir">Comment: 0</p>`,
 	closeDiv = `</div></div>`;
 
 //Don't forget close tag
