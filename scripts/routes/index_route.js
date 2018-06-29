@@ -1,11 +1,13 @@
 const Router = require("koa-router"),
+	gallery = require("../controller/indexGallery");
 	router = new Router();
 
 router.get("/", async ctx => {
 	const data = {
 		loginSuccess: ctx.loginSuccess,
 		registerSuccess: ctx.registerSuccess,
-		userId: ctx.userId
+		userId: ctx.userId,
+		indexGallery: await gallery.makeGallery()
 	};
 	try {
 		await ctx.render("index", data);
