@@ -5,5 +5,6 @@ block content
     if(registerSuccess && registerSuccess.success)
         script(src='./scripts/registerSuccess.js')
     div.pb4-ns.center.mw6-ns.measure
-        input.input-search(type='text' name='search' placeholder='Search image captions')
+        input.input-search(type='text' name='search' placeholder='Search image captions' id="search-box")
     article!= indexGallery
+    script(src='./scripts/searchBox.js')

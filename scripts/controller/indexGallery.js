@@ -1,5 +1,5 @@
 const createQueries = require("../db/queries/index_querry"),
-	responsiveDiv = `<div class="fl w-100-ns w-50-m w-25-l pa2">`,
+	responsiveDiv = `<div class="fl w-100-ns w-50-m w-25-l pa2 gallery">`,
 	captionDiv = `<div id="caption">`,
 	captionSpan = `<span class="text">`,
 	/*	detail = `<div class="mt2 f6">`,
@@ -32,10 +32,7 @@ async function makeGallery() {
 	let gallery = ``;
 	if (Array(picturesCaptionArr).length === Array(picturesIDArr).length) {
 		for (let i in picturesIDArr) {
-			gallery += `${responsiveDiv}<a href="pikka/${picturesIDArr[i]}">
-									${captionDiv}${captionSpan}<h4>${picturesCaptionArr[i]}
-									</h4></span></span><img src="pikka/upload/${picturesIDArr[i]}"/>
-									</a>${closeDiv}`;
+			gallery += `${responsiveDiv}<a href="pikka/${picturesIDArr[i]}">${captionDiv}${captionSpan}<h4>${picturesCaptionArr[i]}</h4></span></span><img src="pikka/upload/${picturesIDArr[i]}"/></a>${closeDiv}`;
 		}
 		return gallery;
 	}
